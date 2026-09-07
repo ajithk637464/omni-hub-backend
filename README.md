@@ -40,9 +40,15 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
+# debug mode
+$ npm run start:debug
+
 # production mode
 $ npm run start:prod
 ```
+
+Swagger documentation is available at `http://localhost:3000/api` while the application is running.
+To debug in VS Code, open the Run and Debug view and start `Debug NestJS`.
 
 ## Run tests
 
