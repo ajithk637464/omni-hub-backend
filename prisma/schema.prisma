@@ -1,10 +1,10 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Alien {
@@ -16,11 +16,4 @@ model Alien {
   isUnlocked  Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-}
-
-model AlienPower {
-  alienPowerId String @id @default(uuid())
-
-  alienId      String
-  alien        Alien  @relation(fields: [alienId], references: [alienId])
 }
