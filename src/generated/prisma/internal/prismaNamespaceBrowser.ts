@@ -51,7 +51,17 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Alien: 'Alien'
+  Alien: 'Alien',
+  User: 'User',
+  Transformation: 'Transformation',
+  QuizQuestion: 'QuizQuestion',
+  Quiz: 'Quiz',
+  QuizAttempt: 'QuizAttempt',
+  Achievement: 'Achievement',
+  UserAchievement: 'UserAchievement',
+  Battle: 'Battle',
+  Activity: 'Activity',
+  BattleParticipant: 'BattleParticipant'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -75,7 +85,7 @@ export const AlienScalarFieldEnum = {
   name: 'name',
   species: 'species',
   description: 'description',
-  imageUrl: 'imageUrl',
+  image: 'image',
   isUnlocked: 'isUnlocked',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -84,12 +94,133 @@ export const AlienScalarFieldEnum = {
 export type AlienScalarFieldEnum = (typeof AlienScalarFieldEnum)[keyof typeof AlienScalarFieldEnum]
 
 
+export const UserScalarFieldEnum = {
+  userId: 'userId',
+  username: 'username',
+  displayName: 'displayName',
+  email: 'email',
+  avatar: 'avatar',
+  omnitrixEnergy: 'omnitrixEnergy',
+  xp: 'xp',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const TransformationScalarFieldEnum = {
+  transformationId: 'transformationId',
+  userId: 'userId',
+  alienId: 'alienId',
+  startedAt: 'startedAt',
+  endedAt: 'endedAt',
+  durationSeconds: 'durationSeconds',
+  createdAt: 'createdAt'
+} as const
+
+export type TransformationScalarFieldEnum = (typeof TransformationScalarFieldEnum)[keyof typeof TransformationScalarFieldEnum]
+
+
+export const QuizQuestionScalarFieldEnum = {
+  questionId: 'questionId',
+  quizId: 'quizId',
+  question: 'question',
+  options: 'options',
+  answer: 'answer',
+  createdAt: 'createdAt'
+} as const
+
+export type QuizQuestionScalarFieldEnum = (typeof QuizQuestionScalarFieldEnum)[keyof typeof QuizQuestionScalarFieldEnum]
+
+
+export const QuizScalarFieldEnum = {
+  quizId: 'quizId',
+  title: 'title',
+  createdAt: 'createdAt'
+} as const
+
+export type QuizScalarFieldEnum = (typeof QuizScalarFieldEnum)[keyof typeof QuizScalarFieldEnum]
+
+
+export const QuizAttemptScalarFieldEnum = {
+  attemptId: 'attemptId',
+  userId: 'userId',
+  quizId: 'quizId',
+  totalQuestions: 'totalQuestions',
+  correctAnswers: 'correctAnswers',
+  score: 'score',
+  startedAt: 'startedAt',
+  completedAt: 'completedAt'
+} as const
+
+export type QuizAttemptScalarFieldEnum = (typeof QuizAttemptScalarFieldEnum)[keyof typeof QuizAttemptScalarFieldEnum]
+
+
+export const AchievementScalarFieldEnum = {
+  achievementId: 'achievementId',
+  name: 'name',
+  description: 'description',
+  image: 'image'
+} as const
+
+export type AchievementScalarFieldEnum = (typeof AchievementScalarFieldEnum)[keyof typeof AchievementScalarFieldEnum]
+
+
+export const UserAchievementScalarFieldEnum = {
+  userId: 'userId',
+  achievementId: 'achievementId',
+  unlockedAt: 'unlockedAt'
+} as const
+
+export type UserAchievementScalarFieldEnum = (typeof UserAchievementScalarFieldEnum)[keyof typeof UserAchievementScalarFieldEnum]
+
+
+export const BattleScalarFieldEnum = {
+  battleId: 'battleId',
+  startedAt: 'startedAt',
+  endedAt: 'endedAt',
+  winnerId: 'winnerId',
+  createdAt: 'createdAt'
+} as const
+
+export type BattleScalarFieldEnum = (typeof BattleScalarFieldEnum)[keyof typeof BattleScalarFieldEnum]
+
+
+export const ActivityScalarFieldEnum = {
+  activityId: 'activityId',
+  userId: 'userId',
+  type: 'type',
+  title: 'title',
+  description: 'description',
+  createdAt: 'createdAt'
+} as const
+
+export type ActivityScalarFieldEnum = (typeof ActivityScalarFieldEnum)[keyof typeof ActivityScalarFieldEnum]
+
+
+export const BattleParticipantScalarFieldEnum = {
+  battleId: 'battleId',
+  userId: 'userId',
+  isWinner: 'isWinner'
+} as const
+
+export type BattleParticipantScalarFieldEnum = (typeof BattleParticipantScalarFieldEnum)[keyof typeof BattleParticipantScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -106,4 +237,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

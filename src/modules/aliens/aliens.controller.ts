@@ -22,16 +22,7 @@ export class AliensController {
 
   @Get()
   async findAll() {
-    debugger
-    try{
-        return await this.aliensService.findAll();
-
-    }
-    catch (error) {
-        debugger
-        console.error('Error fetching aliens:', error);
-        throw error;
-    }
+    return await this.aliensService.findAll();
   }
 
   @Get(':alienId')

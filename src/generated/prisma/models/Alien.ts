@@ -29,7 +29,7 @@ export type AlienMinAggregateOutputType = {
   name: string | null
   species: string | null
   description: string | null
-  imageUrl: string | null
+  image: runtime.Bytes | null
   isUnlocked: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -40,7 +40,7 @@ export type AlienMaxAggregateOutputType = {
   name: string | null
   species: string | null
   description: string | null
-  imageUrl: string | null
+  image: runtime.Bytes | null
   isUnlocked: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -51,7 +51,7 @@ export type AlienCountAggregateOutputType = {
   name: number
   species: number
   description: number
-  imageUrl: number
+  image: number
   isUnlocked: number
   createdAt: number
   updatedAt: number
@@ -64,7 +64,7 @@ export type AlienMinAggregateInputType = {
   name?: true
   species?: true
   description?: true
-  imageUrl?: true
+  image?: true
   isUnlocked?: true
   createdAt?: true
   updatedAt?: true
@@ -75,7 +75,7 @@ export type AlienMaxAggregateInputType = {
   name?: true
   species?: true
   description?: true
-  imageUrl?: true
+  image?: true
   isUnlocked?: true
   createdAt?: true
   updatedAt?: true
@@ -86,7 +86,7 @@ export type AlienCountAggregateInputType = {
   name?: true
   species?: true
   description?: true
-  imageUrl?: true
+  image?: true
   isUnlocked?: true
   createdAt?: true
   updatedAt?: true
@@ -170,7 +170,7 @@ export type AlienGroupByOutputType = {
   name: string
   species: string | null
   description: string | null
-  imageUrl: string | null
+  image: runtime.Bytes | null
   isUnlocked: boolean
   createdAt: Date
   updatedAt: Date
@@ -202,10 +202,11 @@ export type AlienWhereInput = {
   name?: Prisma.StringFilter<"Alien"> | string
   species?: Prisma.StringNullableFilter<"Alien"> | string | null
   description?: Prisma.StringNullableFilter<"Alien"> | string | null
-  imageUrl?: Prisma.StringNullableFilter<"Alien"> | string | null
+  image?: Prisma.BytesNullableFilter<"Alien"> | runtime.Bytes | null
   isUnlocked?: Prisma.BoolFilter<"Alien"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
+  transformations?: Prisma.TransformationListRelationFilter
 }
 
 export type AlienOrderByWithRelationInput = {
@@ -213,10 +214,11 @@ export type AlienOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   species?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
   isUnlocked?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  transformations?: Prisma.TransformationOrderByRelationAggregateInput
 }
 
 export type AlienWhereUniqueInput = Prisma.AtLeast<{
@@ -227,10 +229,11 @@ export type AlienWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringFilter<"Alien"> | string
   species?: Prisma.StringNullableFilter<"Alien"> | string | null
   description?: Prisma.StringNullableFilter<"Alien"> | string | null
-  imageUrl?: Prisma.StringNullableFilter<"Alien"> | string | null
+  image?: Prisma.BytesNullableFilter<"Alien"> | runtime.Bytes | null
   isUnlocked?: Prisma.BoolFilter<"Alien"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
+  transformations?: Prisma.TransformationListRelationFilter
 }, "alienId">
 
 export type AlienOrderByWithAggregationInput = {
@@ -238,7 +241,7 @@ export type AlienOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   species?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
   isUnlocked?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -255,7 +258,7 @@ export type AlienScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"Alien"> | string
   species?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
   description?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
-  imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  image?: Prisma.BytesNullableWithAggregatesFilter<"Alien"> | runtime.Bytes | null
   isUnlocked?: Prisma.BoolWithAggregatesFilter<"Alien"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Alien"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Alien"> | Date | string
@@ -266,10 +269,11 @@ export type AlienCreateInput = {
   name: string
   species?: string | null
   description?: string | null
-  imageUrl?: string | null
+  image?: runtime.Bytes | null
   isUnlocked?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  transformations?: Prisma.TransformationCreateNestedManyWithoutAlienInput
 }
 
 export type AlienUncheckedCreateInput = {
@@ -277,10 +281,11 @@ export type AlienUncheckedCreateInput = {
   name: string
   species?: string | null
   description?: string | null
-  imageUrl?: string | null
+  image?: runtime.Bytes | null
   isUnlocked?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  transformations?: Prisma.TransformationUncheckedCreateNestedManyWithoutAlienInput
 }
 
 export type AlienUpdateInput = {
@@ -288,10 +293,11 @@ export type AlienUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
   isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  transformations?: Prisma.TransformationUpdateManyWithoutAlienNestedInput
 }
 
 export type AlienUncheckedUpdateInput = {
@@ -299,10 +305,11 @@ export type AlienUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
   isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  transformations?: Prisma.TransformationUncheckedUpdateManyWithoutAlienNestedInput
 }
 
 export type AlienCreateManyInput = {
@@ -310,7 +317,7 @@ export type AlienCreateManyInput = {
   name: string
   species?: string | null
   description?: string | null
-  imageUrl?: string | null
+  image?: runtime.Bytes | null
   isUnlocked?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -321,7 +328,7 @@ export type AlienUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
   isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -332,7 +339,7 @@ export type AlienUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
   isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -343,7 +350,7 @@ export type AlienCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   species?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
+  image?: Prisma.SortOrder
   isUnlocked?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -354,7 +361,7 @@ export type AlienMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   species?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
+  image?: Prisma.SortOrder
   isUnlocked?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -365,10 +372,15 @@ export type AlienMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   species?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
+  image?: Prisma.SortOrder
   isUnlocked?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type AlienScalarRelationFilter = {
+  is?: Prisma.AlienWhereInput
+  isNot?: Prisma.AlienWhereInput
 }
 
 export type StringFieldUpdateOperationsInput = {
@@ -379,6 +391,10 @@ export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
 
+export type NullableBytesFieldUpdateOperationsInput = {
+  set?: runtime.Bytes | null
+}
+
 export type BoolFieldUpdateOperationsInput = {
   set?: boolean
 }
@@ -387,6 +403,109 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
+export type AlienCreateNestedOneWithoutTransformationsInput = {
+  create?: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
+  connectOrCreate?: Prisma.AlienCreateOrConnectWithoutTransformationsInput
+  connect?: Prisma.AlienWhereUniqueInput
+}
+
+export type AlienUpdateOneRequiredWithoutTransformationsNestedInput = {
+  create?: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
+  connectOrCreate?: Prisma.AlienCreateOrConnectWithoutTransformationsInput
+  upsert?: Prisma.AlienUpsertWithoutTransformationsInput
+  connect?: Prisma.AlienWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AlienUpdateToOneWithWhereWithoutTransformationsInput, Prisma.AlienUpdateWithoutTransformationsInput>, Prisma.AlienUncheckedUpdateWithoutTransformationsInput>
+}
+
+export type AlienCreateWithoutTransformationsInput = {
+  alienId?: string
+  name: string
+  species?: string | null
+  description?: string | null
+  image?: runtime.Bytes | null
+  isUnlocked?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type AlienUncheckedCreateWithoutTransformationsInput = {
+  alienId?: string
+  name: string
+  species?: string | null
+  description?: string | null
+  image?: runtime.Bytes | null
+  isUnlocked?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type AlienCreateOrConnectWithoutTransformationsInput = {
+  where: Prisma.AlienWhereUniqueInput
+  create: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
+}
+
+export type AlienUpsertWithoutTransformationsInput = {
+  update: Prisma.XOR<Prisma.AlienUpdateWithoutTransformationsInput, Prisma.AlienUncheckedUpdateWithoutTransformationsInput>
+  create: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
+  where?: Prisma.AlienWhereInput
+}
+
+export type AlienUpdateToOneWithWhereWithoutTransformationsInput = {
+  where?: Prisma.AlienWhereInput
+  data: Prisma.XOR<Prisma.AlienUpdateWithoutTransformationsInput, Prisma.AlienUncheckedUpdateWithoutTransformationsInput>
+}
+
+export type AlienUpdateWithoutTransformationsInput = {
+  alienId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
+  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type AlienUncheckedUpdateWithoutTransformationsInput = {
+  alienId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
+  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type AlienCountOutputType
+ */
+
+export type AlienCountOutputType = {
+  transformations: number
+}
+
+export type AlienCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  transformations?: boolean | AlienCountOutputTypeCountTransformationsArgs
+}
+
+/**
+ * AlienCountOutputType without action
+ */
+export type AlienCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AlienCountOutputType
+   */
+  select?: Prisma.AlienCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * AlienCountOutputType without action
+ */
+export type AlienCountOutputTypeCountTransformationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TransformationWhereInput
+}
 
 
 export type AlienSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -394,10 +513,12 @@ export type AlienSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   name?: boolean
   species?: boolean
   description?: boolean
-  imageUrl?: boolean
+  image?: boolean
   isUnlocked?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  transformations?: boolean | Prisma.Alien$transformationsArgs<ExtArgs>
+  _count?: boolean | Prisma.AlienCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["alien"]>
 
 export type AlienSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -405,7 +526,7 @@ export type AlienSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   name?: boolean
   species?: boolean
   description?: boolean
-  imageUrl?: boolean
+  image?: boolean
   isUnlocked?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -416,7 +537,7 @@ export type AlienSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   name?: boolean
   species?: boolean
   description?: boolean
-  imageUrl?: boolean
+  image?: boolean
   isUnlocked?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -427,23 +548,31 @@ export type AlienSelectScalar = {
   name?: boolean
   species?: boolean
   description?: boolean
-  imageUrl?: boolean
+  image?: boolean
   isUnlocked?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type AlienOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"alienId" | "name" | "species" | "description" | "imageUrl" | "isUnlocked" | "createdAt" | "updatedAt", ExtArgs["result"]["alien"]>
+export type AlienOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"alienId" | "name" | "species" | "description" | "image" | "isUnlocked" | "createdAt" | "updatedAt", ExtArgs["result"]["alien"]>
+export type AlienInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  transformations?: boolean | Prisma.Alien$transformationsArgs<ExtArgs>
+  _count?: boolean | Prisma.AlienCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type AlienIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type AlienIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
 export type $AlienPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Alien"
-  objects: {}
+  objects: {
+    transformations: Prisma.$TransformationPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     alienId: string
     name: string
     species: string | null
     description: string | null
-    imageUrl: string | null
+    image: runtime.Bytes | null
     isUnlocked: boolean
     createdAt: Date
     updatedAt: Date
@@ -841,6 +970,7 @@ readonly fields: AlienFieldRefs;
  */
 export interface Prisma__AlienClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  transformations<T extends Prisma.Alien$transformationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Alien$transformationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TransformationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -874,7 +1004,7 @@ export interface AlienFieldRefs {
   readonly name: Prisma.FieldRef<"Alien", 'String'>
   readonly species: Prisma.FieldRef<"Alien", 'String'>
   readonly description: Prisma.FieldRef<"Alien", 'String'>
-  readonly imageUrl: Prisma.FieldRef<"Alien", 'String'>
+  readonly image: Prisma.FieldRef<"Alien", 'Bytes'>
   readonly isUnlocked: Prisma.FieldRef<"Alien", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Alien", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Alien", 'DateTime'>
@@ -895,6 +1025,10 @@ export type AlienFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.Interna
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
+  /**
    * Filter, which Alien to fetch.
    */
   where: Prisma.AlienWhereUniqueInput
@@ -913,6 +1047,10 @@ export type AlienFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
+  /**
    * Filter, which Alien to fetch.
    */
   where: Prisma.AlienWhereUniqueInput
@@ -930,6 +1068,10 @@ export type AlienFindFirstArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Omit specific fields from the Alien
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
   /**
    * Filter, which Alien to fetch.
    */
@@ -979,6 +1121,10 @@ export type AlienFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
+  /**
    * Filter, which Alien to fetch.
    */
   where?: Prisma.AlienWhereInput
@@ -1026,6 +1172,10 @@ export type AlienFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    * Omit specific fields from the Alien
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
   /**
    * Filter, which Aliens to fetch.
    */
@@ -1075,6 +1225,10 @@ export type AlienCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
+  /**
    * The data needed to create a Alien.
    */
   data: Prisma.XOR<Prisma.AlienCreateInput, Prisma.AlienUncheckedCreateInput>
@@ -1122,6 +1276,10 @@ export type AlienUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Alien
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
   /**
    * The data needed to update a Alien.
    */
@@ -1189,6 +1347,10 @@ export type AlienUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
+  /**
    * The filter to search for the Alien to update in case it exists.
    */
   where: Prisma.AlienWhereUniqueInput
@@ -1215,6 +1377,10 @@ export type AlienDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
+  /**
    * Filter which Alien to delete.
    */
   where: Prisma.AlienWhereUniqueInput
@@ -1235,6 +1401,30 @@ export type AlienDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
+ * Alien.transformations
+ */
+export type Alien$transformationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Transformation
+   */
+  select?: Prisma.TransformationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Transformation
+   */
+  omit?: Prisma.TransformationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TransformationInclude<ExtArgs> | null
+  where?: Prisma.TransformationWhereInput
+  orderBy?: Prisma.TransformationOrderByWithRelationInput | Prisma.TransformationOrderByWithRelationInput[]
+  cursor?: Prisma.TransformationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TransformationScalarFieldEnum | Prisma.TransformationScalarFieldEnum[]
+}
+
+/**
  * Alien without action
  */
 export type AlienDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1246,4 +1436,8 @@ export type AlienDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    * Omit specific fields from the Alien
    */
   omit?: Prisma.AlienOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlienInclude<ExtArgs> | null
 }
