@@ -8,148 +8,57 @@ datasource db {
 }
 
 model Alien {
-  alienId     String   @id @default(uuid())
-  name        String
-  species     String?
-  description String?
-  image       Bytes?
-  isUnlocked  Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  AlienId              Int      @id @default(autoincrement())
+  AlienGuid            String   @unique @default(uuid())
+  AlienName            String
+  Species              String?
+  HomePlanet           String?
+  Description          String?
+  EnergyConsumption    Int      @default(0)
+  Strength             Int      @default(0)
+  Speed                Int      @default(0)
+  Intelligence         Int      @default(0)
+  Accuracy             Int      @default(0)
+  AlienLevel           Int      @default(1)
+  Unlocked             Boolean  @default(false)
+  IsActive             Boolean  @default(true)
+  SortOrder            Int      @default(0)
+  Created              DateTime @default(now())
+  CreatedUserGuid      String?
+  CreatedUserGroupGuid String?
+  Updated              DateTime @updatedAt
+  UpdatedUserGuid      String?
+  UpdatedUserGroupGuid String?
 
-  transformations Transformation[]
+  AlienAlienPowers AlienAlienPower[]
 }
 
-model User {
-  userId         String   @id @default(uuid())
-  username       String   @unique
-  displayName    String
-  email          String   @unique
-  avatar         Bytes?
-  omnitrixEnergy Int      @default(100)
-  xp             Int      @default(0)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+model AlienPower {
+  AlienPowerId         Int      @id @default(autoincrement())
+  AlienPowerGuid       String   @unique @default(uuid())
+  AlienPowerName       String
+  Description          String?
+  PowerType            String
+  PowerLevel           Int
+  IsActive             Boolean  @default(true)
+  SortOrder            Int      @default(0)
+  Created              DateTime @default(now())
+  CreatedUserGuid      String?
+  CreatedUserGroupGuid String?
+  Updated              DateTime @updatedAt
+  UpdatedUserGuid      String?
+  UpdatedUserGroupGuid String?
 
-  transformations Transformation[]
-  achievements   UserAchievement[]
-  quizAttempts   QuizAttempt[]
-  activities     Activity[]
-  battleParticipants BattleParticipant[]
+  AlienAlienPowers AlienAlienPower[]
 }
 
-model Transformation {
-  transformationId String   @id @default(uuid())
+model AlienAlienPower {
+  AlienId      Int
+  AlienPowerId Int
+  IsMainPower  Boolean @default(false)
 
-  userId  String
-  alienId String
+  Alien      Alien      @relation(fields: [AlienId], references: [AlienId])
+  AlienPower AlienPower @relation(fields: [AlienPowerId], references: [AlienPowerId])
 
-  startedAt DateTime
-  endedAt   DateTime?
-
-  durationSeconds Int?
-
-  createdAt DateTime @default(now())
-
-  user  User  @relation(fields: [userId], references: [userId])
-  alien Alien @relation(fields: [alienId], references: [alienId])
-}
-model QuizQuestion {
-  questionId String @id @default(uuid())
-
-  quizId String
-
-  question String
-  options  Json
-  answer   String
-
-  createdAt DateTime @default(now())
-
-  quiz Quiz @relation(fields: [quizId], references: [quizId])
-}
-
-model Quiz {
-  quizId    String   @id @default(uuid())
-  title     String
-  createdAt DateTime @default(now())
-
-  questions QuizQuestion[]
-  attempts  QuizAttempt[]
-}
-model QuizAttempt {
-  attemptId String @id @default(uuid())
-
-  userId String
-  quizId String
-
-  totalQuestions   Int
-  correctAnswers   Int
-  score             Int
-
-  startedAt DateTime
-  completedAt DateTime?
-
-  user  User  @relation(fields: [userId], references: [userId])
-  quiz Quiz @relation(fields: [quizId], references: [quizId])
-}
-
-model Achievement {
-  achievementId String @id @default(uuid())
-
-  name        String
-  description String?
-  image       Bytes?
-
-  UserAchievements UserAchievement[]
-}
-
-model UserAchievement {
-  userId        String
-  achievementId String
-
-  unlockedAt DateTime @default(now())
-
-  user  User  @relation(fields: [userId], references: [userId])
-  achievement Achievement @relation(fields: [achievementId], references: [achievementId])
-
-  @@id([userId, achievementId])
-}
-
-model Battle {
-  battleId String @id @default(uuid())
-
-  startedAt DateTime
-  endedAt   DateTime?
-
-  winnerId String?
-
-  createdAt DateTime @default(now())
-
-  participants BattleParticipant[]
-}
-
-model Activity {
-  activityId String @id @default(uuid())
-
-  userId String
-
-  type String
-  title String
-  description String?
-
-  createdAt DateTime @default(now())
-
-  user  User  @relation(fields: [userId], references: [userId])
-}
-
-model BattleParticipant {
-  battleId String
-  userId   String
-
-  isWinner Boolean @default(false)
-
-  battle Battle @relation(fields: [battleId], references: [battleId])
-  user   User   @relation(fields: [userId], references: [userId])
-
-  @@id([battleId, userId])
+  @@id([AlienId, AlienPowerId])
 }

@@ -9,14 +9,6 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/Alien.js'
-export type * from './models/User.js'
-export type * from './models/Transformation.js'
-export type * from './models/QuizQuestion.js'
-export type * from './models/Quiz.js'
-export type * from './models/QuizAttempt.js'
-export type * from './models/Achievement.js'
-export type * from './models/UserAchievement.js'
-export type * from './models/Battle.js'
-export type * from './models/Activity.js'
-export type * from './models/BattleParticipant.js'
+export type * from './models/AlienPower.js'
+export type * from './models/AlienAlienPower.js'
 export type * from './commonInputTypes.js'

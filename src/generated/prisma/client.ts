@@ -45,52 +45,12 @@ export { Prisma }
  */
 export type Alien = Prisma.AlienModel
 /**
- * Model User
+ * Model AlienPower
  * 
  */
-export type User = Prisma.UserModel
+export type AlienPower = Prisma.AlienPowerModel
 /**
- * Model Transformation
+ * Model AlienAlienPower
  * 
  */
-export type Transformation = Prisma.TransformationModel
-/**
- * Model QuizQuestion
- * 
- */
-export type QuizQuestion = Prisma.QuizQuestionModel
-/**
- * Model Quiz
- * 
- */
-export type Quiz = Prisma.QuizModel
-/**
- * Model QuizAttempt
- * 
- */
-export type QuizAttempt = Prisma.QuizAttemptModel
-/**
- * Model Achievement
- * 
- */
-export type Achievement = Prisma.AchievementModel
-/**
- * Model UserAchievement
- * 
- */
-export type UserAchievement = Prisma.UserAchievementModel
-/**
- * Model Battle
- * 
- */
-export type Battle = Prisma.BattleModel
-/**
- * Model Activity
- * 
- */
-export type Activity = Prisma.ActivityModel
-/**
- * Model BattleParticipant
- * 
- */
-export type BattleParticipant = Prisma.BattleParticipantModel
+export type AlienAlienPower = Prisma.AlienAlienPowerModel

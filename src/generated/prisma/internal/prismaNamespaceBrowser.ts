@@ -52,16 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Alien: 'Alien',
-  User: 'User',
-  Transformation: 'Transformation',
-  QuizQuestion: 'QuizQuestion',
-  Quiz: 'Quiz',
-  QuizAttempt: 'QuizAttempt',
-  Achievement: 'Achievement',
-  UserAchievement: 'UserAchievement',
-  Battle: 'Battle',
-  Activity: 'Activity',
-  BattleParticipant: 'BattleParticipant'
+  AlienPower: 'AlienPower',
+  AlienAlienPower: 'AlienAlienPower'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -81,131 +73,59 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 
 export const AlienScalarFieldEnum = {
-  alienId: 'alienId',
-  name: 'name',
-  species: 'species',
-  description: 'description',
-  image: 'image',
-  isUnlocked: 'isUnlocked',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  AlienId: 'AlienId',
+  AlienGuid: 'AlienGuid',
+  AlienName: 'AlienName',
+  Species: 'Species',
+  HomePlanet: 'HomePlanet',
+  Description: 'Description',
+  EnergyConsumption: 'EnergyConsumption',
+  Strength: 'Strength',
+  Speed: 'Speed',
+  Intelligence: 'Intelligence',
+  Accuracy: 'Accuracy',
+  AlienLevel: 'AlienLevel',
+  Unlocked: 'Unlocked',
+  IsActive: 'IsActive',
+  SortOrder: 'SortOrder',
+  Created: 'Created',
+  CreatedUserGuid: 'CreatedUserGuid',
+  CreatedUserGroupGuid: 'CreatedUserGroupGuid',
+  Updated: 'Updated',
+  UpdatedUserGuid: 'UpdatedUserGuid',
+  UpdatedUserGroupGuid: 'UpdatedUserGroupGuid'
 } as const
 
 export type AlienScalarFieldEnum = (typeof AlienScalarFieldEnum)[keyof typeof AlienScalarFieldEnum]
 
 
-export const UserScalarFieldEnum = {
-  userId: 'userId',
-  username: 'username',
-  displayName: 'displayName',
-  email: 'email',
-  avatar: 'avatar',
-  omnitrixEnergy: 'omnitrixEnergy',
-  xp: 'xp',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+export const AlienPowerScalarFieldEnum = {
+  AlienPowerId: 'AlienPowerId',
+  AlienPowerGuid: 'AlienPowerGuid',
+  AlienPowerName: 'AlienPowerName',
+  Description: 'Description',
+  PowerType: 'PowerType',
+  PowerLevel: 'PowerLevel',
+  IsActive: 'IsActive',
+  SortOrder: 'SortOrder',
+  Created: 'Created',
+  CreatedUserGuid: 'CreatedUserGuid',
+  CreatedUserGroupGuid: 'CreatedUserGroupGuid',
+  Updated: 'Updated',
+  UpdatedUserGuid: 'UpdatedUserGuid',
+  UpdatedUserGroupGuid: 'UpdatedUserGroupGuid'
 } as const
 
-export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+export type AlienPowerScalarFieldEnum = (typeof AlienPowerScalarFieldEnum)[keyof typeof AlienPowerScalarFieldEnum]
 
 
-export const TransformationScalarFieldEnum = {
-  transformationId: 'transformationId',
-  userId: 'userId',
-  alienId: 'alienId',
-  startedAt: 'startedAt',
-  endedAt: 'endedAt',
-  durationSeconds: 'durationSeconds',
-  createdAt: 'createdAt'
+export const AlienAlienPowerScalarFieldEnum = {
+  AlienId: 'AlienId',
+  AlienPowerId: 'AlienPowerId',
+  IsMainPower: 'IsMainPower'
 } as const
 
-export type TransformationScalarFieldEnum = (typeof TransformationScalarFieldEnum)[keyof typeof TransformationScalarFieldEnum]
-
-
-export const QuizQuestionScalarFieldEnum = {
-  questionId: 'questionId',
-  quizId: 'quizId',
-  question: 'question',
-  options: 'options',
-  answer: 'answer',
-  createdAt: 'createdAt'
-} as const
-
-export type QuizQuestionScalarFieldEnum = (typeof QuizQuestionScalarFieldEnum)[keyof typeof QuizQuestionScalarFieldEnum]
-
-
-export const QuizScalarFieldEnum = {
-  quizId: 'quizId',
-  title: 'title',
-  createdAt: 'createdAt'
-} as const
-
-export type QuizScalarFieldEnum = (typeof QuizScalarFieldEnum)[keyof typeof QuizScalarFieldEnum]
-
-
-export const QuizAttemptScalarFieldEnum = {
-  attemptId: 'attemptId',
-  userId: 'userId',
-  quizId: 'quizId',
-  totalQuestions: 'totalQuestions',
-  correctAnswers: 'correctAnswers',
-  score: 'score',
-  startedAt: 'startedAt',
-  completedAt: 'completedAt'
-} as const
-
-export type QuizAttemptScalarFieldEnum = (typeof QuizAttemptScalarFieldEnum)[keyof typeof QuizAttemptScalarFieldEnum]
-
-
-export const AchievementScalarFieldEnum = {
-  achievementId: 'achievementId',
-  name: 'name',
-  description: 'description',
-  image: 'image'
-} as const
-
-export type AchievementScalarFieldEnum = (typeof AchievementScalarFieldEnum)[keyof typeof AchievementScalarFieldEnum]
-
-
-export const UserAchievementScalarFieldEnum = {
-  userId: 'userId',
-  achievementId: 'achievementId',
-  unlockedAt: 'unlockedAt'
-} as const
-
-export type UserAchievementScalarFieldEnum = (typeof UserAchievementScalarFieldEnum)[keyof typeof UserAchievementScalarFieldEnum]
-
-
-export const BattleScalarFieldEnum = {
-  battleId: 'battleId',
-  startedAt: 'startedAt',
-  endedAt: 'endedAt',
-  winnerId: 'winnerId',
-  createdAt: 'createdAt'
-} as const
-
-export type BattleScalarFieldEnum = (typeof BattleScalarFieldEnum)[keyof typeof BattleScalarFieldEnum]
-
-
-export const ActivityScalarFieldEnum = {
-  activityId: 'activityId',
-  userId: 'userId',
-  type: 'type',
-  title: 'title',
-  description: 'description',
-  createdAt: 'createdAt'
-} as const
-
-export type ActivityScalarFieldEnum = (typeof ActivityScalarFieldEnum)[keyof typeof ActivityScalarFieldEnum]
-
-
-export const BattleParticipantScalarFieldEnum = {
-  battleId: 'battleId',
-  userId: 'userId',
-  isWinner: 'isWinner'
-} as const
-
-export type BattleParticipantScalarFieldEnum = (typeof BattleParticipantScalarFieldEnum)[keyof typeof BattleParticipantScalarFieldEnum]
+export type AlienAlienPowerScalarFieldEnum = (typeof AlienAlienPowerScalarFieldEnum)[keyof typeof AlienAlienPowerScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -214,13 +134,6 @@ export const SortOrder = {
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
-
-
-export const JsonNullValueInput = {
-  JsonNull: JsonNull
-} as const
-
-export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -237,13 +150,4 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-export const JsonNullValueFilter = {
-  DbNull: DbNull,
-  JsonNull: JsonNull,
-  AnyNull: AnyNull
-} as const
-
-export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

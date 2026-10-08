@@ -20,76 +20,200 @@ export type AlienModel = runtime.Types.Result.DefaultSelection<Prisma.$AlienPayl
 
 export type AggregateAlien = {
   _count: AlienCountAggregateOutputType | null
+  _avg: AlienAvgAggregateOutputType | null
+  _sum: AlienSumAggregateOutputType | null
   _min: AlienMinAggregateOutputType | null
   _max: AlienMaxAggregateOutputType | null
 }
 
+export type AlienAvgAggregateOutputType = {
+  AlienId: number | null
+  EnergyConsumption: number | null
+  Strength: number | null
+  Speed: number | null
+  Intelligence: number | null
+  Accuracy: number | null
+  AlienLevel: number | null
+  SortOrder: number | null
+}
+
+export type AlienSumAggregateOutputType = {
+  AlienId: number | null
+  EnergyConsumption: number | null
+  Strength: number | null
+  Speed: number | null
+  Intelligence: number | null
+  Accuracy: number | null
+  AlienLevel: number | null
+  SortOrder: number | null
+}
+
 export type AlienMinAggregateOutputType = {
-  alienId: string | null
-  name: string | null
-  species: string | null
-  description: string | null
-  image: runtime.Bytes | null
-  isUnlocked: boolean | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  AlienId: number | null
+  AlienGuid: string | null
+  AlienName: string | null
+  Species: string | null
+  HomePlanet: string | null
+  Description: string | null
+  EnergyConsumption: number | null
+  Strength: number | null
+  Speed: number | null
+  Intelligence: number | null
+  Accuracy: number | null
+  AlienLevel: number | null
+  Unlocked: boolean | null
+  IsActive: boolean | null
+  SortOrder: number | null
+  Created: Date | null
+  CreatedUserGuid: string | null
+  CreatedUserGroupGuid: string | null
+  Updated: Date | null
+  UpdatedUserGuid: string | null
+  UpdatedUserGroupGuid: string | null
 }
 
 export type AlienMaxAggregateOutputType = {
-  alienId: string | null
-  name: string | null
-  species: string | null
-  description: string | null
-  image: runtime.Bytes | null
-  isUnlocked: boolean | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  AlienId: number | null
+  AlienGuid: string | null
+  AlienName: string | null
+  Species: string | null
+  HomePlanet: string | null
+  Description: string | null
+  EnergyConsumption: number | null
+  Strength: number | null
+  Speed: number | null
+  Intelligence: number | null
+  Accuracy: number | null
+  AlienLevel: number | null
+  Unlocked: boolean | null
+  IsActive: boolean | null
+  SortOrder: number | null
+  Created: Date | null
+  CreatedUserGuid: string | null
+  CreatedUserGroupGuid: string | null
+  Updated: Date | null
+  UpdatedUserGuid: string | null
+  UpdatedUserGroupGuid: string | null
 }
 
 export type AlienCountAggregateOutputType = {
-  alienId: number
-  name: number
-  species: number
-  description: number
-  image: number
-  isUnlocked: number
-  createdAt: number
-  updatedAt: number
+  AlienId: number
+  AlienGuid: number
+  AlienName: number
+  Species: number
+  HomePlanet: number
+  Description: number
+  EnergyConsumption: number
+  Strength: number
+  Speed: number
+  Intelligence: number
+  Accuracy: number
+  AlienLevel: number
+  Unlocked: number
+  IsActive: number
+  SortOrder: number
+  Created: number
+  CreatedUserGuid: number
+  CreatedUserGroupGuid: number
+  Updated: number
+  UpdatedUserGuid: number
+  UpdatedUserGroupGuid: number
   _all: number
 }
 
 
+export type AlienAvgAggregateInputType = {
+  AlienId?: true
+  EnergyConsumption?: true
+  Strength?: true
+  Speed?: true
+  Intelligence?: true
+  Accuracy?: true
+  AlienLevel?: true
+  SortOrder?: true
+}
+
+export type AlienSumAggregateInputType = {
+  AlienId?: true
+  EnergyConsumption?: true
+  Strength?: true
+  Speed?: true
+  Intelligence?: true
+  Accuracy?: true
+  AlienLevel?: true
+  SortOrder?: true
+}
+
 export type AlienMinAggregateInputType = {
-  alienId?: true
-  name?: true
-  species?: true
-  description?: true
-  image?: true
-  isUnlocked?: true
-  createdAt?: true
-  updatedAt?: true
+  AlienId?: true
+  AlienGuid?: true
+  AlienName?: true
+  Species?: true
+  HomePlanet?: true
+  Description?: true
+  EnergyConsumption?: true
+  Strength?: true
+  Speed?: true
+  Intelligence?: true
+  Accuracy?: true
+  AlienLevel?: true
+  Unlocked?: true
+  IsActive?: true
+  SortOrder?: true
+  Created?: true
+  CreatedUserGuid?: true
+  CreatedUserGroupGuid?: true
+  Updated?: true
+  UpdatedUserGuid?: true
+  UpdatedUserGroupGuid?: true
 }
 
 export type AlienMaxAggregateInputType = {
-  alienId?: true
-  name?: true
-  species?: true
-  description?: true
-  image?: true
-  isUnlocked?: true
-  createdAt?: true
-  updatedAt?: true
+  AlienId?: true
+  AlienGuid?: true
+  AlienName?: true
+  Species?: true
+  HomePlanet?: true
+  Description?: true
+  EnergyConsumption?: true
+  Strength?: true
+  Speed?: true
+  Intelligence?: true
+  Accuracy?: true
+  AlienLevel?: true
+  Unlocked?: true
+  IsActive?: true
+  SortOrder?: true
+  Created?: true
+  CreatedUserGuid?: true
+  CreatedUserGroupGuid?: true
+  Updated?: true
+  UpdatedUserGuid?: true
+  UpdatedUserGroupGuid?: true
 }
 
 export type AlienCountAggregateInputType = {
-  alienId?: true
-  name?: true
-  species?: true
-  description?: true
-  image?: true
-  isUnlocked?: true
-  createdAt?: true
-  updatedAt?: true
+  AlienId?: true
+  AlienGuid?: true
+  AlienName?: true
+  Species?: true
+  HomePlanet?: true
+  Description?: true
+  EnergyConsumption?: true
+  Strength?: true
+  Speed?: true
+  Intelligence?: true
+  Accuracy?: true
+  AlienLevel?: true
+  Unlocked?: true
+  IsActive?: true
+  SortOrder?: true
+  Created?: true
+  CreatedUserGuid?: true
+  CreatedUserGroupGuid?: true
+  Updated?: true
+  UpdatedUserGuid?: true
+  UpdatedUserGroupGuid?: true
   _all?: true
 }
 
@@ -131,6 +255,18 @@ export type AlienAggregateArgs<ExtArgs extends runtime.Types.Extensions.Internal
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
+   * Select which fields to average
+  **/
+  _avg?: AlienAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   *
+   * Select which fields to sum
+  **/
+  _sum?: AlienSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   *
    * Select which fields to find the minimum value
   **/
   _min?: AlienMinAggregateInputType
@@ -161,20 +297,37 @@ export type AlienGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
   take?: number
   skip?: number
   _count?: AlienCountAggregateInputType | true
+  _avg?: AlienAvgAggregateInputType
+  _sum?: AlienSumAggregateInputType
   _min?: AlienMinAggregateInputType
   _max?: AlienMaxAggregateInputType
 }
 
 export type AlienGroupByOutputType = {
-  alienId: string
-  name: string
-  species: string | null
-  description: string | null
-  image: runtime.Bytes | null
-  isUnlocked: boolean
-  createdAt: Date
-  updatedAt: Date
+  AlienId: number
+  AlienGuid: string
+  AlienName: string
+  Species: string | null
+  HomePlanet: string | null
+  Description: string | null
+  EnergyConsumption: number
+  Strength: number
+  Speed: number
+  Intelligence: number
+  Accuracy: number
+  AlienLevel: number
+  Unlocked: boolean
+  IsActive: boolean
+  SortOrder: number
+  Created: Date
+  CreatedUserGuid: string | null
+  CreatedUserGroupGuid: string | null
+  Updated: Date
+  UpdatedUserGuid: string | null
+  UpdatedUserGroupGuid: string | null
   _count: AlienCountAggregateOutputType | null
+  _avg: AlienAvgAggregateOutputType | null
+  _sum: AlienSumAggregateOutputType | null
   _min: AlienMinAggregateOutputType | null
   _max: AlienMaxAggregateOutputType | null
 }
@@ -198,184 +351,400 @@ export type AlienWhereInput = {
   AND?: Prisma.AlienWhereInput | Prisma.AlienWhereInput[]
   OR?: Prisma.AlienWhereInput[]
   NOT?: Prisma.AlienWhereInput | Prisma.AlienWhereInput[]
-  alienId?: Prisma.StringFilter<"Alien"> | string
-  name?: Prisma.StringFilter<"Alien"> | string
-  species?: Prisma.StringNullableFilter<"Alien"> | string | null
-  description?: Prisma.StringNullableFilter<"Alien"> | string | null
-  image?: Prisma.BytesNullableFilter<"Alien"> | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFilter<"Alien"> | boolean
-  createdAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
-  transformations?: Prisma.TransformationListRelationFilter
+  AlienId?: Prisma.IntFilter<"Alien"> | number
+  AlienGuid?: Prisma.StringFilter<"Alien"> | string
+  AlienName?: Prisma.StringFilter<"Alien"> | string
+  Species?: Prisma.StringNullableFilter<"Alien"> | string | null
+  HomePlanet?: Prisma.StringNullableFilter<"Alien"> | string | null
+  Description?: Prisma.StringNullableFilter<"Alien"> | string | null
+  EnergyConsumption?: Prisma.IntFilter<"Alien"> | number
+  Strength?: Prisma.IntFilter<"Alien"> | number
+  Speed?: Prisma.IntFilter<"Alien"> | number
+  Intelligence?: Prisma.IntFilter<"Alien"> | number
+  Accuracy?: Prisma.IntFilter<"Alien"> | number
+  AlienLevel?: Prisma.IntFilter<"Alien"> | number
+  Unlocked?: Prisma.BoolFilter<"Alien"> | boolean
+  IsActive?: Prisma.BoolFilter<"Alien"> | boolean
+  SortOrder?: Prisma.IntFilter<"Alien"> | number
+  Created?: Prisma.DateTimeFilter<"Alien"> | Date | string
+  CreatedUserGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  CreatedUserGroupGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  Updated?: Prisma.DateTimeFilter<"Alien"> | Date | string
+  UpdatedUserGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  UpdatedUserGroupGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  AlienAlienPowers?: Prisma.AlienAlienPowerListRelationFilter
 }
 
 export type AlienOrderByWithRelationInput = {
-  alienId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  species?: Prisma.SortOrderInput | Prisma.SortOrder
-  description?: Prisma.SortOrderInput | Prisma.SortOrder
-  image?: Prisma.SortOrderInput | Prisma.SortOrder
-  isUnlocked?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
-  transformations?: Prisma.TransformationOrderByRelationAggregateInput
+  AlienId?: Prisma.SortOrder
+  AlienGuid?: Prisma.SortOrder
+  AlienName?: Prisma.SortOrder
+  Species?: Prisma.SortOrderInput | Prisma.SortOrder
+  HomePlanet?: Prisma.SortOrderInput | Prisma.SortOrder
+  Description?: Prisma.SortOrderInput | Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  Unlocked?: Prisma.SortOrder
+  IsActive?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
+  Created?: Prisma.SortOrder
+  CreatedUserGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  CreatedUserGroupGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  Updated?: Prisma.SortOrder
+  UpdatedUserGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  UpdatedUserGroupGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  AlienAlienPowers?: Prisma.AlienAlienPowerOrderByRelationAggregateInput
 }
 
 export type AlienWhereUniqueInput = Prisma.AtLeast<{
-  alienId?: string
+  AlienId?: number
+  AlienGuid?: string
   AND?: Prisma.AlienWhereInput | Prisma.AlienWhereInput[]
   OR?: Prisma.AlienWhereInput[]
   NOT?: Prisma.AlienWhereInput | Prisma.AlienWhereInput[]
-  name?: Prisma.StringFilter<"Alien"> | string
-  species?: Prisma.StringNullableFilter<"Alien"> | string | null
-  description?: Prisma.StringNullableFilter<"Alien"> | string | null
-  image?: Prisma.BytesNullableFilter<"Alien"> | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFilter<"Alien"> | boolean
-  createdAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Alien"> | Date | string
-  transformations?: Prisma.TransformationListRelationFilter
-}, "alienId">
+  AlienName?: Prisma.StringFilter<"Alien"> | string
+  Species?: Prisma.StringNullableFilter<"Alien"> | string | null
+  HomePlanet?: Prisma.StringNullableFilter<"Alien"> | string | null
+  Description?: Prisma.StringNullableFilter<"Alien"> | string | null
+  EnergyConsumption?: Prisma.IntFilter<"Alien"> | number
+  Strength?: Prisma.IntFilter<"Alien"> | number
+  Speed?: Prisma.IntFilter<"Alien"> | number
+  Intelligence?: Prisma.IntFilter<"Alien"> | number
+  Accuracy?: Prisma.IntFilter<"Alien"> | number
+  AlienLevel?: Prisma.IntFilter<"Alien"> | number
+  Unlocked?: Prisma.BoolFilter<"Alien"> | boolean
+  IsActive?: Prisma.BoolFilter<"Alien"> | boolean
+  SortOrder?: Prisma.IntFilter<"Alien"> | number
+  Created?: Prisma.DateTimeFilter<"Alien"> | Date | string
+  CreatedUserGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  CreatedUserGroupGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  Updated?: Prisma.DateTimeFilter<"Alien"> | Date | string
+  UpdatedUserGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  UpdatedUserGroupGuid?: Prisma.StringNullableFilter<"Alien"> | string | null
+  AlienAlienPowers?: Prisma.AlienAlienPowerListRelationFilter
+}, "AlienId" | "AlienGuid">
 
 export type AlienOrderByWithAggregationInput = {
-  alienId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  species?: Prisma.SortOrderInput | Prisma.SortOrder
-  description?: Prisma.SortOrderInput | Prisma.SortOrder
-  image?: Prisma.SortOrderInput | Prisma.SortOrder
-  isUnlocked?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  AlienId?: Prisma.SortOrder
+  AlienGuid?: Prisma.SortOrder
+  AlienName?: Prisma.SortOrder
+  Species?: Prisma.SortOrderInput | Prisma.SortOrder
+  HomePlanet?: Prisma.SortOrderInput | Prisma.SortOrder
+  Description?: Prisma.SortOrderInput | Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  Unlocked?: Prisma.SortOrder
+  IsActive?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
+  Created?: Prisma.SortOrder
+  CreatedUserGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  CreatedUserGroupGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  Updated?: Prisma.SortOrder
+  UpdatedUserGuid?: Prisma.SortOrderInput | Prisma.SortOrder
+  UpdatedUserGroupGuid?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.AlienCountOrderByAggregateInput
+  _avg?: Prisma.AlienAvgOrderByAggregateInput
   _max?: Prisma.AlienMaxOrderByAggregateInput
   _min?: Prisma.AlienMinOrderByAggregateInput
+  _sum?: Prisma.AlienSumOrderByAggregateInput
 }
 
 export type AlienScalarWhereWithAggregatesInput = {
   AND?: Prisma.AlienScalarWhereWithAggregatesInput | Prisma.AlienScalarWhereWithAggregatesInput[]
   OR?: Prisma.AlienScalarWhereWithAggregatesInput[]
   NOT?: Prisma.AlienScalarWhereWithAggregatesInput | Prisma.AlienScalarWhereWithAggregatesInput[]
-  alienId?: Prisma.StringWithAggregatesFilter<"Alien"> | string
-  name?: Prisma.StringWithAggregatesFilter<"Alien"> | string
-  species?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
-  description?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
-  image?: Prisma.BytesNullableWithAggregatesFilter<"Alien"> | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolWithAggregatesFilter<"Alien"> | boolean
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Alien"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Alien"> | Date | string
+  AlienId?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  AlienGuid?: Prisma.StringWithAggregatesFilter<"Alien"> | string
+  AlienName?: Prisma.StringWithAggregatesFilter<"Alien"> | string
+  Species?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  HomePlanet?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  Description?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  EnergyConsumption?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  Strength?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  Speed?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  Intelligence?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  Accuracy?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  AlienLevel?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  Unlocked?: Prisma.BoolWithAggregatesFilter<"Alien"> | boolean
+  IsActive?: Prisma.BoolWithAggregatesFilter<"Alien"> | boolean
+  SortOrder?: Prisma.IntWithAggregatesFilter<"Alien"> | number
+  Created?: Prisma.DateTimeWithAggregatesFilter<"Alien"> | Date | string
+  CreatedUserGuid?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  CreatedUserGroupGuid?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  Updated?: Prisma.DateTimeWithAggregatesFilter<"Alien"> | Date | string
+  UpdatedUserGuid?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
+  UpdatedUserGroupGuid?: Prisma.StringNullableWithAggregatesFilter<"Alien"> | string | null
 }
 
 export type AlienCreateInput = {
-  alienId?: string
-  name: string
-  species?: string | null
-  description?: string | null
-  image?: runtime.Bytes | null
-  isUnlocked?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  transformations?: Prisma.TransformationCreateNestedManyWithoutAlienInput
+  AlienGuid?: string
+  AlienName: string
+  Species?: string | null
+  HomePlanet?: string | null
+  Description?: string | null
+  EnergyConsumption?: number
+  Strength?: number
+  Speed?: number
+  Intelligence?: number
+  Accuracy?: number
+  AlienLevel?: number
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: number
+  Created?: Date | string
+  CreatedUserGuid?: string | null
+  CreatedUserGroupGuid?: string | null
+  Updated?: Date | string
+  UpdatedUserGuid?: string | null
+  UpdatedUserGroupGuid?: string | null
+  AlienAlienPowers?: Prisma.AlienAlienPowerCreateNestedManyWithoutAlienInput
 }
 
 export type AlienUncheckedCreateInput = {
-  alienId?: string
-  name: string
-  species?: string | null
-  description?: string | null
-  image?: runtime.Bytes | null
-  isUnlocked?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  transformations?: Prisma.TransformationUncheckedCreateNestedManyWithoutAlienInput
+  AlienId?: number
+  AlienGuid?: string
+  AlienName: string
+  Species?: string | null
+  HomePlanet?: string | null
+  Description?: string | null
+  EnergyConsumption?: number
+  Strength?: number
+  Speed?: number
+  Intelligence?: number
+  Accuracy?: number
+  AlienLevel?: number
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: number
+  Created?: Date | string
+  CreatedUserGuid?: string | null
+  CreatedUserGroupGuid?: string | null
+  Updated?: Date | string
+  UpdatedUserGuid?: string | null
+  UpdatedUserGroupGuid?: string | null
+  AlienAlienPowers?: Prisma.AlienAlienPowerUncheckedCreateNestedManyWithoutAlienInput
 }
 
 export type AlienUpdateInput = {
-  alienId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  transformations?: Prisma.TransformationUpdateManyWithoutAlienNestedInput
+  AlienGuid?: Prisma.StringFieldUpdateOperationsInput | string
+  AlienName?: Prisma.StringFieldUpdateOperationsInput | string
+  Species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  HomePlanet?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EnergyConsumption?: Prisma.IntFieldUpdateOperationsInput | number
+  Strength?: Prisma.IntFieldUpdateOperationsInput | number
+  Speed?: Prisma.IntFieldUpdateOperationsInput | number
+  Intelligence?: Prisma.IntFieldUpdateOperationsInput | number
+  Accuracy?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  Unlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  IsActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  SortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  Created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  CreatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  CreatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Updated?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  UpdatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  UpdatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  AlienAlienPowers?: Prisma.AlienAlienPowerUpdateManyWithoutAlienNestedInput
 }
 
 export type AlienUncheckedUpdateInput = {
-  alienId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  transformations?: Prisma.TransformationUncheckedUpdateManyWithoutAlienNestedInput
+  AlienId?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienGuid?: Prisma.StringFieldUpdateOperationsInput | string
+  AlienName?: Prisma.StringFieldUpdateOperationsInput | string
+  Species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  HomePlanet?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EnergyConsumption?: Prisma.IntFieldUpdateOperationsInput | number
+  Strength?: Prisma.IntFieldUpdateOperationsInput | number
+  Speed?: Prisma.IntFieldUpdateOperationsInput | number
+  Intelligence?: Prisma.IntFieldUpdateOperationsInput | number
+  Accuracy?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  Unlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  IsActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  SortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  Created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  CreatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  CreatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Updated?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  UpdatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  UpdatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  AlienAlienPowers?: Prisma.AlienAlienPowerUncheckedUpdateManyWithoutAlienNestedInput
 }
 
 export type AlienCreateManyInput = {
-  alienId?: string
-  name: string
-  species?: string | null
-  description?: string | null
-  image?: runtime.Bytes | null
-  isUnlocked?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  AlienId?: number
+  AlienGuid?: string
+  AlienName: string
+  Species?: string | null
+  HomePlanet?: string | null
+  Description?: string | null
+  EnergyConsumption?: number
+  Strength?: number
+  Speed?: number
+  Intelligence?: number
+  Accuracy?: number
+  AlienLevel?: number
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: number
+  Created?: Date | string
+  CreatedUserGuid?: string | null
+  CreatedUserGroupGuid?: string | null
+  Updated?: Date | string
+  UpdatedUserGuid?: string | null
+  UpdatedUserGroupGuid?: string | null
 }
 
 export type AlienUpdateManyMutationInput = {
-  alienId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  AlienGuid?: Prisma.StringFieldUpdateOperationsInput | string
+  AlienName?: Prisma.StringFieldUpdateOperationsInput | string
+  Species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  HomePlanet?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EnergyConsumption?: Prisma.IntFieldUpdateOperationsInput | number
+  Strength?: Prisma.IntFieldUpdateOperationsInput | number
+  Speed?: Prisma.IntFieldUpdateOperationsInput | number
+  Intelligence?: Prisma.IntFieldUpdateOperationsInput | number
+  Accuracy?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  Unlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  IsActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  SortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  Created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  CreatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  CreatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Updated?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  UpdatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  UpdatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AlienUncheckedUpdateManyInput = {
-  alienId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  AlienId?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienGuid?: Prisma.StringFieldUpdateOperationsInput | string
+  AlienName?: Prisma.StringFieldUpdateOperationsInput | string
+  Species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  HomePlanet?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EnergyConsumption?: Prisma.IntFieldUpdateOperationsInput | number
+  Strength?: Prisma.IntFieldUpdateOperationsInput | number
+  Speed?: Prisma.IntFieldUpdateOperationsInput | number
+  Intelligence?: Prisma.IntFieldUpdateOperationsInput | number
+  Accuracy?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  Unlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  IsActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  SortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  Created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  CreatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  CreatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Updated?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  UpdatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  UpdatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AlienCountOrderByAggregateInput = {
-  alienId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  species?: Prisma.SortOrder
-  description?: Prisma.SortOrder
-  image?: Prisma.SortOrder
-  isUnlocked?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  AlienId?: Prisma.SortOrder
+  AlienGuid?: Prisma.SortOrder
+  AlienName?: Prisma.SortOrder
+  Species?: Prisma.SortOrder
+  HomePlanet?: Prisma.SortOrder
+  Description?: Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  Unlocked?: Prisma.SortOrder
+  IsActive?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
+  Created?: Prisma.SortOrder
+  CreatedUserGuid?: Prisma.SortOrder
+  CreatedUserGroupGuid?: Prisma.SortOrder
+  Updated?: Prisma.SortOrder
+  UpdatedUserGuid?: Prisma.SortOrder
+  UpdatedUserGroupGuid?: Prisma.SortOrder
+}
+
+export type AlienAvgOrderByAggregateInput = {
+  AlienId?: Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
 }
 
 export type AlienMaxOrderByAggregateInput = {
-  alienId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  species?: Prisma.SortOrder
-  description?: Prisma.SortOrder
-  image?: Prisma.SortOrder
-  isUnlocked?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  AlienId?: Prisma.SortOrder
+  AlienGuid?: Prisma.SortOrder
+  AlienName?: Prisma.SortOrder
+  Species?: Prisma.SortOrder
+  HomePlanet?: Prisma.SortOrder
+  Description?: Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  Unlocked?: Prisma.SortOrder
+  IsActive?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
+  Created?: Prisma.SortOrder
+  CreatedUserGuid?: Prisma.SortOrder
+  CreatedUserGroupGuid?: Prisma.SortOrder
+  Updated?: Prisma.SortOrder
+  UpdatedUserGuid?: Prisma.SortOrder
+  UpdatedUserGroupGuid?: Prisma.SortOrder
 }
 
 export type AlienMinOrderByAggregateInput = {
-  alienId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  species?: Prisma.SortOrder
-  description?: Prisma.SortOrder
-  image?: Prisma.SortOrder
-  isUnlocked?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  AlienId?: Prisma.SortOrder
+  AlienGuid?: Prisma.SortOrder
+  AlienName?: Prisma.SortOrder
+  Species?: Prisma.SortOrder
+  HomePlanet?: Prisma.SortOrder
+  Description?: Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  Unlocked?: Prisma.SortOrder
+  IsActive?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
+  Created?: Prisma.SortOrder
+  CreatedUserGuid?: Prisma.SortOrder
+  CreatedUserGroupGuid?: Prisma.SortOrder
+  Updated?: Prisma.SortOrder
+  UpdatedUserGuid?: Prisma.SortOrder
+  UpdatedUserGroupGuid?: Prisma.SortOrder
+}
+
+export type AlienSumOrderByAggregateInput = {
+  AlienId?: Prisma.SortOrder
+  EnergyConsumption?: Prisma.SortOrder
+  Strength?: Prisma.SortOrder
+  Speed?: Prisma.SortOrder
+  Intelligence?: Prisma.SortOrder
+  Accuracy?: Prisma.SortOrder
+  AlienLevel?: Prisma.SortOrder
+  SortOrder?: Prisma.SortOrder
 }
 
 export type AlienScalarRelationFilter = {
@@ -391,8 +760,12 @@ export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
 
-export type NullableBytesFieldUpdateOperationsInput = {
-  set?: runtime.Bytes | null
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 export type BoolFieldUpdateOperationsInput = {
@@ -403,78 +776,128 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
-export type AlienCreateNestedOneWithoutTransformationsInput = {
-  create?: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
-  connectOrCreate?: Prisma.AlienCreateOrConnectWithoutTransformationsInput
+export type AlienCreateNestedOneWithoutAlienAlienPowersInput = {
+  create?: Prisma.XOR<Prisma.AlienCreateWithoutAlienAlienPowersInput, Prisma.AlienUncheckedCreateWithoutAlienAlienPowersInput>
+  connectOrCreate?: Prisma.AlienCreateOrConnectWithoutAlienAlienPowersInput
   connect?: Prisma.AlienWhereUniqueInput
 }
 
-export type AlienUpdateOneRequiredWithoutTransformationsNestedInput = {
-  create?: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
-  connectOrCreate?: Prisma.AlienCreateOrConnectWithoutTransformationsInput
-  upsert?: Prisma.AlienUpsertWithoutTransformationsInput
+export type AlienUpdateOneRequiredWithoutAlienAlienPowersNestedInput = {
+  create?: Prisma.XOR<Prisma.AlienCreateWithoutAlienAlienPowersInput, Prisma.AlienUncheckedCreateWithoutAlienAlienPowersInput>
+  connectOrCreate?: Prisma.AlienCreateOrConnectWithoutAlienAlienPowersInput
+  upsert?: Prisma.AlienUpsertWithoutAlienAlienPowersInput
   connect?: Prisma.AlienWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.AlienUpdateToOneWithWhereWithoutTransformationsInput, Prisma.AlienUpdateWithoutTransformationsInput>, Prisma.AlienUncheckedUpdateWithoutTransformationsInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AlienUpdateToOneWithWhereWithoutAlienAlienPowersInput, Prisma.AlienUpdateWithoutAlienAlienPowersInput>, Prisma.AlienUncheckedUpdateWithoutAlienAlienPowersInput>
 }
 
-export type AlienCreateWithoutTransformationsInput = {
-  alienId?: string
-  name: string
-  species?: string | null
-  description?: string | null
-  image?: runtime.Bytes | null
-  isUnlocked?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
+export type AlienCreateWithoutAlienAlienPowersInput = {
+  AlienGuid?: string
+  AlienName: string
+  Species?: string | null
+  HomePlanet?: string | null
+  Description?: string | null
+  EnergyConsumption?: number
+  Strength?: number
+  Speed?: number
+  Intelligence?: number
+  Accuracy?: number
+  AlienLevel?: number
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: number
+  Created?: Date | string
+  CreatedUserGuid?: string | null
+  CreatedUserGroupGuid?: string | null
+  Updated?: Date | string
+  UpdatedUserGuid?: string | null
+  UpdatedUserGroupGuid?: string | null
 }
 
-export type AlienUncheckedCreateWithoutTransformationsInput = {
-  alienId?: string
-  name: string
-  species?: string | null
-  description?: string | null
-  image?: runtime.Bytes | null
-  isUnlocked?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
+export type AlienUncheckedCreateWithoutAlienAlienPowersInput = {
+  AlienId?: number
+  AlienGuid?: string
+  AlienName: string
+  Species?: string | null
+  HomePlanet?: string | null
+  Description?: string | null
+  EnergyConsumption?: number
+  Strength?: number
+  Speed?: number
+  Intelligence?: number
+  Accuracy?: number
+  AlienLevel?: number
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: number
+  Created?: Date | string
+  CreatedUserGuid?: string | null
+  CreatedUserGroupGuid?: string | null
+  Updated?: Date | string
+  UpdatedUserGuid?: string | null
+  UpdatedUserGroupGuid?: string | null
 }
 
-export type AlienCreateOrConnectWithoutTransformationsInput = {
+export type AlienCreateOrConnectWithoutAlienAlienPowersInput = {
   where: Prisma.AlienWhereUniqueInput
-  create: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
+  create: Prisma.XOR<Prisma.AlienCreateWithoutAlienAlienPowersInput, Prisma.AlienUncheckedCreateWithoutAlienAlienPowersInput>
 }
 
-export type AlienUpsertWithoutTransformationsInput = {
-  update: Prisma.XOR<Prisma.AlienUpdateWithoutTransformationsInput, Prisma.AlienUncheckedUpdateWithoutTransformationsInput>
-  create: Prisma.XOR<Prisma.AlienCreateWithoutTransformationsInput, Prisma.AlienUncheckedCreateWithoutTransformationsInput>
+export type AlienUpsertWithoutAlienAlienPowersInput = {
+  update: Prisma.XOR<Prisma.AlienUpdateWithoutAlienAlienPowersInput, Prisma.AlienUncheckedUpdateWithoutAlienAlienPowersInput>
+  create: Prisma.XOR<Prisma.AlienCreateWithoutAlienAlienPowersInput, Prisma.AlienUncheckedCreateWithoutAlienAlienPowersInput>
   where?: Prisma.AlienWhereInput
 }
 
-export type AlienUpdateToOneWithWhereWithoutTransformationsInput = {
+export type AlienUpdateToOneWithWhereWithoutAlienAlienPowersInput = {
   where?: Prisma.AlienWhereInput
-  data: Prisma.XOR<Prisma.AlienUpdateWithoutTransformationsInput, Prisma.AlienUncheckedUpdateWithoutTransformationsInput>
+  data: Prisma.XOR<Prisma.AlienUpdateWithoutAlienAlienPowersInput, Prisma.AlienUncheckedUpdateWithoutAlienAlienPowersInput>
 }
 
-export type AlienUpdateWithoutTransformationsInput = {
-  alienId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type AlienUpdateWithoutAlienAlienPowersInput = {
+  AlienGuid?: Prisma.StringFieldUpdateOperationsInput | string
+  AlienName?: Prisma.StringFieldUpdateOperationsInput | string
+  Species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  HomePlanet?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EnergyConsumption?: Prisma.IntFieldUpdateOperationsInput | number
+  Strength?: Prisma.IntFieldUpdateOperationsInput | number
+  Speed?: Prisma.IntFieldUpdateOperationsInput | number
+  Intelligence?: Prisma.IntFieldUpdateOperationsInput | number
+  Accuracy?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  Unlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  IsActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  SortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  Created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  CreatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  CreatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Updated?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  UpdatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  UpdatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type AlienUncheckedUpdateWithoutTransformationsInput = {
-  alienId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  image?: Prisma.NullableBytesFieldUpdateOperationsInput | runtime.Bytes | null
-  isUnlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type AlienUncheckedUpdateWithoutAlienAlienPowersInput = {
+  AlienId?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienGuid?: Prisma.StringFieldUpdateOperationsInput | string
+  AlienName?: Prisma.StringFieldUpdateOperationsInput | string
+  Species?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  HomePlanet?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EnergyConsumption?: Prisma.IntFieldUpdateOperationsInput | number
+  Strength?: Prisma.IntFieldUpdateOperationsInput | number
+  Speed?: Prisma.IntFieldUpdateOperationsInput | number
+  Intelligence?: Prisma.IntFieldUpdateOperationsInput | number
+  Accuracy?: Prisma.IntFieldUpdateOperationsInput | number
+  AlienLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  Unlocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  IsActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  SortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  Created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  CreatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  CreatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Updated?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  UpdatedUserGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  UpdatedUserGroupGuid?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -483,11 +906,11 @@ export type AlienUncheckedUpdateWithoutTransformationsInput = {
  */
 
 export type AlienCountOutputType = {
-  transformations: number
+  AlienAlienPowers: number
 }
 
 export type AlienCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  transformations?: boolean | AlienCountOutputTypeCountTransformationsArgs
+  AlienAlienPowers?: boolean | AlienCountOutputTypeCountAlienAlienPowersArgs
 }
 
 /**
@@ -503,60 +926,112 @@ export type AlienCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
 /**
  * AlienCountOutputType without action
  */
-export type AlienCountOutputTypeCountTransformationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TransformationWhereInput
+export type AlienCountOutputTypeCountAlienAlienPowersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AlienAlienPowerWhereInput
 }
 
 
 export type AlienSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  alienId?: boolean
-  name?: boolean
-  species?: boolean
-  description?: boolean
-  image?: boolean
-  isUnlocked?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
-  transformations?: boolean | Prisma.Alien$transformationsArgs<ExtArgs>
+  AlienId?: boolean
+  AlienGuid?: boolean
+  AlienName?: boolean
+  Species?: boolean
+  HomePlanet?: boolean
+  Description?: boolean
+  EnergyConsumption?: boolean
+  Strength?: boolean
+  Speed?: boolean
+  Intelligence?: boolean
+  Accuracy?: boolean
+  AlienLevel?: boolean
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: boolean
+  Created?: boolean
+  CreatedUserGuid?: boolean
+  CreatedUserGroupGuid?: boolean
+  Updated?: boolean
+  UpdatedUserGuid?: boolean
+  UpdatedUserGroupGuid?: boolean
+  AlienAlienPowers?: boolean | Prisma.Alien$AlienAlienPowersArgs<ExtArgs>
   _count?: boolean | Prisma.AlienCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["alien"]>
 
 export type AlienSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  alienId?: boolean
-  name?: boolean
-  species?: boolean
-  description?: boolean
-  image?: boolean
-  isUnlocked?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  AlienId?: boolean
+  AlienGuid?: boolean
+  AlienName?: boolean
+  Species?: boolean
+  HomePlanet?: boolean
+  Description?: boolean
+  EnergyConsumption?: boolean
+  Strength?: boolean
+  Speed?: boolean
+  Intelligence?: boolean
+  Accuracy?: boolean
+  AlienLevel?: boolean
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: boolean
+  Created?: boolean
+  CreatedUserGuid?: boolean
+  CreatedUserGroupGuid?: boolean
+  Updated?: boolean
+  UpdatedUserGuid?: boolean
+  UpdatedUserGroupGuid?: boolean
 }, ExtArgs["result"]["alien"]>
 
 export type AlienSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  alienId?: boolean
-  name?: boolean
-  species?: boolean
-  description?: boolean
-  image?: boolean
-  isUnlocked?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  AlienId?: boolean
+  AlienGuid?: boolean
+  AlienName?: boolean
+  Species?: boolean
+  HomePlanet?: boolean
+  Description?: boolean
+  EnergyConsumption?: boolean
+  Strength?: boolean
+  Speed?: boolean
+  Intelligence?: boolean
+  Accuracy?: boolean
+  AlienLevel?: boolean
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: boolean
+  Created?: boolean
+  CreatedUserGuid?: boolean
+  CreatedUserGroupGuid?: boolean
+  Updated?: boolean
+  UpdatedUserGuid?: boolean
+  UpdatedUserGroupGuid?: boolean
 }, ExtArgs["result"]["alien"]>
 
 export type AlienSelectScalar = {
-  alienId?: boolean
-  name?: boolean
-  species?: boolean
-  description?: boolean
-  image?: boolean
-  isUnlocked?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  AlienId?: boolean
+  AlienGuid?: boolean
+  AlienName?: boolean
+  Species?: boolean
+  HomePlanet?: boolean
+  Description?: boolean
+  EnergyConsumption?: boolean
+  Strength?: boolean
+  Speed?: boolean
+  Intelligence?: boolean
+  Accuracy?: boolean
+  AlienLevel?: boolean
+  Unlocked?: boolean
+  IsActive?: boolean
+  SortOrder?: boolean
+  Created?: boolean
+  CreatedUserGuid?: boolean
+  CreatedUserGroupGuid?: boolean
+  Updated?: boolean
+  UpdatedUserGuid?: boolean
+  UpdatedUserGroupGuid?: boolean
 }
 
-export type AlienOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"alienId" | "name" | "species" | "description" | "image" | "isUnlocked" | "createdAt" | "updatedAt", ExtArgs["result"]["alien"]>
+export type AlienOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"AlienId" | "AlienGuid" | "AlienName" | "Species" | "HomePlanet" | "Description" | "EnergyConsumption" | "Strength" | "Speed" | "Intelligence" | "Accuracy" | "AlienLevel" | "Unlocked" | "IsActive" | "SortOrder" | "Created" | "CreatedUserGuid" | "CreatedUserGroupGuid" | "Updated" | "UpdatedUserGuid" | "UpdatedUserGroupGuid", ExtArgs["result"]["alien"]>
 export type AlienInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  transformations?: boolean | Prisma.Alien$transformationsArgs<ExtArgs>
+  AlienAlienPowers?: boolean | Prisma.Alien$AlienAlienPowersArgs<ExtArgs>
   _count?: boolean | Prisma.AlienCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AlienIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -565,17 +1040,30 @@ export type AlienIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type $AlienPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Alien"
   objects: {
-    transformations: Prisma.$TransformationPayload<ExtArgs>[]
+    AlienAlienPowers: Prisma.$AlienAlienPowerPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    alienId: string
-    name: string
-    species: string | null
-    description: string | null
-    image: runtime.Bytes | null
-    isUnlocked: boolean
-    createdAt: Date
-    updatedAt: Date
+    AlienId: number
+    AlienGuid: string
+    AlienName: string
+    Species: string | null
+    HomePlanet: string | null
+    Description: string | null
+    EnergyConsumption: number
+    Strength: number
+    Speed: number
+    Intelligence: number
+    Accuracy: number
+    AlienLevel: number
+    Unlocked: boolean
+    IsActive: boolean
+    SortOrder: number
+    Created: Date
+    CreatedUserGuid: string | null
+    CreatedUserGroupGuid: string | null
+    Updated: Date
+    UpdatedUserGuid: string | null
+    UpdatedUserGroupGuid: string | null
   }, ExtArgs["result"]["alien"]>
   composites: {}
 }
@@ -659,8 +1147,8 @@ export interface AlienDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * // Get first 10 Aliens
    * const aliens = await prisma.alien.findMany({ take: 10 })
    * 
-   * // Only select the `alienId`
-   * const alienWithAlienIdOnly = await prisma.alien.findMany({ select: { alienId: true } })
+   * // Only select the `AlienId`
+   * const alienWithAlienIdOnly = await prisma.alien.findMany({ select: { AlienId: true } })
    * 
    */
   findMany<T extends AlienFindManyArgs>(args?: Prisma.SelectSubset<T, AlienFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AlienPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
@@ -704,9 +1192,9 @@ export interface AlienDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   ]
    * })
    * 
-   * // Create many Aliens and only return the `alienId`
+   * // Create many Aliens and only return the `AlienId`
    * const alienWithAlienIdOnly = await prisma.alien.createManyAndReturn({
-   *   select: { alienId: true },
+   *   select: { AlienId: true },
    *   data: [
    *     // ... provide data here
    *   ]
@@ -795,9 +1283,9 @@ export interface AlienDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   ]
    * })
    * 
-   * // Update zero or more Aliens and only return the `alienId`
+   * // Update zero or more Aliens and only return the `AlienId`
    * const alienWithAlienIdOnly = await prisma.alien.updateManyAndReturn({
-   *   select: { alienId: true },
+   *   select: { AlienId: true },
    *   where: {
    *     // ... provide filter here
    *   },
@@ -970,7 +1458,7 @@ readonly fields: AlienFieldRefs;
  */
 export interface Prisma__AlienClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  transformations<T extends Prisma.Alien$transformationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Alien$transformationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TransformationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  AlienAlienPowers<T extends Prisma.Alien$AlienAlienPowersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Alien$AlienAlienPowersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AlienAlienPowerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1000,14 +1488,27 @@ export interface Prisma__AlienClient<T, Null = never, ExtArgs extends runtime.Ty
  * Fields of the Alien model
  */
 export interface AlienFieldRefs {
-  readonly alienId: Prisma.FieldRef<"Alien", 'String'>
-  readonly name: Prisma.FieldRef<"Alien", 'String'>
-  readonly species: Prisma.FieldRef<"Alien", 'String'>
-  readonly description: Prisma.FieldRef<"Alien", 'String'>
-  readonly image: Prisma.FieldRef<"Alien", 'Bytes'>
-  readonly isUnlocked: Prisma.FieldRef<"Alien", 'Boolean'>
-  readonly createdAt: Prisma.FieldRef<"Alien", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Alien", 'DateTime'>
+  readonly AlienId: Prisma.FieldRef<"Alien", 'Int'>
+  readonly AlienGuid: Prisma.FieldRef<"Alien", 'String'>
+  readonly AlienName: Prisma.FieldRef<"Alien", 'String'>
+  readonly Species: Prisma.FieldRef<"Alien", 'String'>
+  readonly HomePlanet: Prisma.FieldRef<"Alien", 'String'>
+  readonly Description: Prisma.FieldRef<"Alien", 'String'>
+  readonly EnergyConsumption: Prisma.FieldRef<"Alien", 'Int'>
+  readonly Strength: Prisma.FieldRef<"Alien", 'Int'>
+  readonly Speed: Prisma.FieldRef<"Alien", 'Int'>
+  readonly Intelligence: Prisma.FieldRef<"Alien", 'Int'>
+  readonly Accuracy: Prisma.FieldRef<"Alien", 'Int'>
+  readonly AlienLevel: Prisma.FieldRef<"Alien", 'Int'>
+  readonly Unlocked: Prisma.FieldRef<"Alien", 'Boolean'>
+  readonly IsActive: Prisma.FieldRef<"Alien", 'Boolean'>
+  readonly SortOrder: Prisma.FieldRef<"Alien", 'Int'>
+  readonly Created: Prisma.FieldRef<"Alien", 'DateTime'>
+  readonly CreatedUserGuid: Prisma.FieldRef<"Alien", 'String'>
+  readonly CreatedUserGroupGuid: Prisma.FieldRef<"Alien", 'String'>
+  readonly Updated: Prisma.FieldRef<"Alien", 'DateTime'>
+  readonly UpdatedUserGuid: Prisma.FieldRef<"Alien", 'String'>
+  readonly UpdatedUserGroupGuid: Prisma.FieldRef<"Alien", 'String'>
 }
     
 
@@ -1401,27 +1902,27 @@ export type AlienDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
- * Alien.transformations
+ * Alien.AlienAlienPowers
  */
-export type Alien$transformationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Alien$AlienAlienPowersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Transformation
+   * Select specific fields to fetch from the AlienAlienPower
    */
-  select?: Prisma.TransformationSelect<ExtArgs> | null
+  select?: Prisma.AlienAlienPowerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Transformation
+   * Omit specific fields from the AlienAlienPower
    */
-  omit?: Prisma.TransformationOmit<ExtArgs> | null
+  omit?: Prisma.AlienAlienPowerOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TransformationInclude<ExtArgs> | null
-  where?: Prisma.TransformationWhereInput
-  orderBy?: Prisma.TransformationOrderByWithRelationInput | Prisma.TransformationOrderByWithRelationInput[]
-  cursor?: Prisma.TransformationWhereUniqueInput
+  include?: Prisma.AlienAlienPowerInclude<ExtArgs> | null
+  where?: Prisma.AlienAlienPowerWhereInput
+  orderBy?: Prisma.AlienAlienPowerOrderByWithRelationInput | Prisma.AlienAlienPowerOrderByWithRelationInput[]
+  cursor?: Prisma.AlienAlienPowerWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.TransformationScalarFieldEnum | Prisma.TransformationScalarFieldEnum[]
+  distinct?: Prisma.AlienAlienPowerScalarFieldEnum | Prisma.AlienAlienPowerScalarFieldEnum[]
 }
 
 /**
