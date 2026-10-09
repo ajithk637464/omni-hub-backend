@@ -3,7 +3,19 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 
+import { Prisma } from '../../generated/prisma/client';
 import { PrismaService } from '../../database/prisma/prisma.service';
+import { AlienListResponseDto } from './dto/alien-list-response.dto';
+
+type AlienWithPowers = Prisma.AlienGetPayload<{
+  include: {
+    AlienAlienPowers: {
+      include: {
+        AlienPower: true;
+      };
+    };
+  };
+}>;
 
 @Injectable()
 export class AliensService {
@@ -12,12 +24,47 @@ export class AliensService {
   ) {}
 
   // GET /aliens
-  async findAll() {
-    return this.prisma.alien.findMany({
+  async findAll(): Promise<AlienListResponseDto[]> {
+    const aliens = await this.prisma.alien.findMany({
+      select: {
+        AlienId: true,
+        AlienGuid: true,
+        AlienName: true,
+        Species: true,
+        HomePlanet: true,
+        Description: true,
+        AlienLevel: true,
+        Unlocked: true,
+        AlienAlienPowers: {
+          select: {
+            IsMainPower: true,
+            AlienPower: {
+              select: {
+                AlienPowerId: true,
+                AlienPowerGuid: true,
+                AlienPowerName: true,
+                Description: true,
+                PowerType: true,
+                PowerLevel: true,
+                IsActive: true,
+                SortOrder: true,
+              },
+            },
+          },
+        },
+      },
       orderBy: {
         Created: 'asc',
       },
     });
+
+    return aliens.map(({ AlienAlienPowers, ...alien }) => ({
+      ...alien,
+      PowerList: AlienAlienPowers.map(({ AlienPower, IsMainPower }) => ({
+        ...AlienPower,
+        IsMainPower,
+      })),
+    }));
   }
 
   // GET /aliens/:alienId
@@ -25,6 +72,13 @@ export class AliensService {
     const alien = await this.prisma.alien.findUnique({
       where: {
         AlienId: alienId,
+      },
+      include: {
+        AlienAlienPowers: {
+          include: {
+            AlienPower: true,
+          },
+        },
       },
     });
 
@@ -34,6 +88,16 @@ export class AliensService {
       );
     }
 
-    return alien;
+    return this.withPowerList(alien);
+  }
+
+  private withPowerList({ AlienAlienPowers, ...alien }: AlienWithPowers) {
+    return {
+      ...alien,
+      PowerList: AlienAlienPowers.map(({ AlienPower, IsMainPower }) => ({
+        ...AlienPower,
+        IsMainPower,
+      })),
+    };
   }
 }
